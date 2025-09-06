@@ -1,0 +1,494 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: relative;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.logo {
+    max-width: 100px;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    filter: brightness(0) invert(1);
+}
+
+nav {
+    margin: 0;
+    padding: 10px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    background: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    display: inline;
+    margin: 0 15px;
+    padding: 0px 0px;
+    border: 0px solid transparent;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+    font-size: 18px;
+}
+
+nav a:hover {
+    color: #e60000; 
+}
+
+.container {
+    display: flex;
+}
+
+.centered-image {
+    display: block;
+    width: 640px; /* Укажи точную ширину изображения */
+    margin: 0 auto;
+}
+
+.centered-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+main {
+    flex: 5;
+    padding: 20px;
+}
+
+main a {
+    transition: color 0.2s;
+}
+
+main a:hover {
+    color: #e60000;
+}
+
+section, article {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3 {
+    color: #e60000;
+}
+
+ul, ol {
+    margin: 20px;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+
+.events-section {
+    background-color: #d4f1f9; 
+}
+
+.news-section {
+    background-color: #e3d6ff;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.race-image {
+    width: 300px; 
+    height: auto;
+    float: right;  
+    margin: 10px 20px;  
+    clear: both;  
+}
+
+.no-underline {
+    text-decoration: none;
+}
+
+.notification-container {
+    position: fixed; /* фиксируем на экране */
+    bottom: 20px; /* отступ от нижнего края */
+    left: 20px; /* отступ от левого края */
+    z-index: 100; /* убедимся, что иконка всегда будет сверху */
+    outline: none; /* убираем стандартный контур при получении фокуса */
+}
+
+.notification-icon {
+    background-color: #8a8a8a;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s, filter 0.3s; /* Плавный переход для затемнения */
+    position: relative; /* Для размещения красного кружка */
+}
+
+.notification-icon img {
+    width: 20px;
+    height: 20px;
+    filter: invert(1);
+}
+
+.notification-icon::after {
+    content: '2'; 
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 18px;
+    display: block;
+}
+
+.notification-container:focus-within .notification-icon::after {
+    opacity: 0; 
+}
+
+.notification-container:focus-within .notification-list {
+    display: block;
+}
+
+.notification-list {
+    display: none;
+    position: absolute;
+    bottom: -15px; /* располагаем список выше иконки */
+    left: 100%; /* располагать список справа от иконки */
+    margin-left: 10px; /* небольшой отступ от иконки */
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 200px;
+    max-width: calc(100vw - 40px); /* ограничиваем ширину, чтобы не выходило за пределы экрана */
+    max-height: 80vh; /* ограничиваем высоту, чтобы не выходило за экран */
+    overflow-y: auto; /* добавляем прокрутку, если список слишком длинный */
+}
+
+.notification-list li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.notification-list li:last-child {
+    border-bottom: none;
+}
+
+.notification-list li:hover {
+    background-color: #f0f0f0;
+}
+
+.notification-container:hover .notification-icon {
+    background-color: #5a5a5a; 
+}
+
+.notification-icon:focus + .notification-list {
+    display: block;
+}
+
+
+.legend-card-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.legend-card {
+    position: relative;
+    width: calc(33% - 20px);
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.legend-card:hover {
+    transform: scale(1.05);
+}
+
+.legend-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.legend-card:hover::before {
+    opacity: 1;
+}
+
+.legend-card h3 {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 1;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+}
+
+.legend-card:hover h3 {
+    opacity: 1;
+}
+
+.video-container {
+    position: relative;
+    width: 640px;
+    height: 360px;
+    margin: 40px auto; /* Центрируем блок по горизонтали */
+    overflow: hidden; /* Ограничиваем содержимое */
+    border-radius: 8px;
+    display: flex;
+    align-items: center; /* Центрируем надпись по вертикали */
+    justify-content: center; /* Центрируем надпись по горизонтали */
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out; /* Анимация затемнения и увеличения */
+}
+
+.video-container:hover iframe {
+    filter: brightness(0.7); /* Затемняем видео при наведении */
+    transform: scale(1.05); /* Увеличиваем видео при наведении */
+}
+
+.video-description {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    opacity: 0; /* Скрываем текст изначально */
+    z-index: 2; /* Поверх видео */
+    transition: opacity 0.3s ease-in-out; /* Плавное появление текста */
+}
+
+.video-container:hover .video-description {
+    opacity: 1; /* Показываем текст при наведении */
+}
+
+.map-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px auto; /* Центрируем блок по горизонтали */
+    width: 100%; /* Устанавливаем ширину контейнера */
+}
+
+iframe {
+    width: 600px;
+    height: 400px;
+    border: none;
+    border-radius: 8px; /* Опционально, если хотите закругленные углы */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень для визуального эффекта */
+}
+
+/* Общие стили для кнопок */
+.button-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  
+.race-btn {
+    position: relative;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: 2px solid #007bff;
+    border-radius: 50px;
+    cursor: pointer;
+    outline: none;
+    overflow: hidden; /* Обеспечивает, чтобы псевдоэлемент не выходил за пределы кнопки */
+    transition: all 0.3s ease; /* Плавный переход для всех свойств */
+}
+  
+  /* Псевдоэлемент для анимации контурной линии */
+.race-btn::before {
+    content: '';
+    position: absolute;
+    top: 0; /* Линия должна быть прямо по контуру */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 4px solid #fff; /* Увеличиваем толщину линии */
+    border-radius: 50px; /* Делаем её круглой */
+    opacity: 0; /* Линия изначально скрыта */
+    transition: opacity 0.3s ease; /* Плавное появление линии */
+}
+  
+  /* Анимация при наведении: линия появляется сразу */
+.race-btn:hover::before {
+    opacity: 1; /* Линия становится видимой */
+}
+  
+  /* Стиль кнопки при нажатии */
+.race-btn:active {
+    transform: scale(0.98); /* Уменьшаем кнопку при нажатии */
+    transition: transform 0.1s ease; /* Плавное изменение при нажатии */
+}
+  
+  /* Цвета при нажатии: меняем местами цвет фона и текста */
+.race-btn:active {
+    color: #007bff; /* Текст кнопки становится цветом кнопки */
+    background-color: #fff; /* Фон кнопки становится белым */
+    border-color: #007bff; /* Цвет границы остаётся как у кнопки */
+}
+  
+  /* Индивидуальные стили для каждой кнопки */
+.race-btn.shop {
+    background-color: #28a745; 
+    border-color: #28a745;
+}
+
+.race-btn.register {
+    background-color: #ffc107; /* Желтый для "Leaderboard" */
+    border-color: #ffc107;
+}
+
+.race-btn.feedback {
+    background-color: #007bff; 
+    border-color: #007bff;
+}
+
+  /* Когда кнопка активна, меняем цвета на основе классов */
+.race-btn.shop:active {
+    color: #28a745; /* Текст кнопки становится зелёным */
+    background-color: #fff; /* Фон становится белым */
+    border-color: #28a745; /* Граница остаётся зелёной */
+}
+  
+.race-btn.register:active {
+    color: #ffc107; /* Текст кнопки становится жёлтым */
+    background-color: #fff; /* Фон становится белым */
+    border-color: #ffc107; /* Граница остаётся жёлтой */
+}
+
+.race-btn.feedback:active {
+    color: #007bff; /* Текст кнопки становится жёлтым */
+    background-color: #fff; /* Фон становится белым */
+    border-color: #007bff; /* Граница остаётся жёлтой */
+}
+
+/* Контейнер для кнопок */
+.social-buttons {
+    display: flex;
+    justify-content: center; /* Центрируем кнопки по горизонтали */
+    align-items: center; /* Центрируем кнопки по вертикали */
+    gap: 2rem; /* Расстояние между кнопками */
+    height: 100px; /* Высота футера */
+}
+
+/* Стили для кнопок */
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem; /* Диаметр кнопки */
+    height: 4rem;
+    background-color: #5a5a5a; /* Цвет как у кружка уведомлений */
+    border-radius: 50%; /* Сделаем кнопки круглыми */
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+}
+
+/* Иконка внутри кнопки */
+.social-btn img {
+    width: 2rem; /* Размер иконки */
+    height: 2rem;
+    transition: transform 0.3s ease;
+}
+
+/* Увеличение кнопки при наведении */
+.social-btn:hover {
+    transform: scale(1.2); /* Увеличение кнопки при наведении */
+}
+
+/* Псевдоэлемент для анимации заполнения */
+.social-btn::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #680000, #ff0000);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.65s ease;
+    z-index: 0;
+}
+
+/* Анимация заполнения кнопки градиентом при наведении */
+.social-btn:hover::before {
+    transform: scaleY(1); /* Заполнение кнопки при наведении */
+}
+
+/* Увеличение иконки при наведении */
+.social-btn:hover img {
+    transform: scale(1.1); /* Увеличение иконки при наведении */
+}
