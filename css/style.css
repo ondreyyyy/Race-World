@@ -113,7 +113,8 @@ main a:hover {
     color: #e60000;
 }
 
-section, article {
+section,
+article {
     margin-top: 15px;
     padding: 15px;
     background-color: #fff;
@@ -121,16 +122,27 @@ section, article {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     color: #e60000;
     word-wrap: break-word;
 }
 
-h1 { font-size: 1.8em; }
-h2 { font-size: 1.5em; }
-h3 { font-size: 1.2em; }
+h1 {
+    font-size: 1.8em;
+}
 
-ul, ol {
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+ul,
+ol {
     margin: 15px 10px;
     padding-left: 20px;
 }
@@ -230,7 +242,8 @@ footer a:hover {
 .video-container iframe {
     width: 100%;
     height: auto;
-    aspect-ratio: 16/9; /* Сохраняем пропорции */
+    aspect-ratio: 16/9;
+    /* Сохраняем пропорции */
     border: none;
     transition: filter 0.3s ease-in-out;
 }
@@ -306,8 +319,10 @@ footer a:hover {
 .social-btn img {
     width: 1.5rem;
     height: 1.5rem;
-    z-index: 1; /* Добавляем это свойство */
-    position: relative; /* Добавляем это свойство */
+    z-index: 1;
+    /* Добавляем это свойство */
+    position: relative;
+    /* Добавляем это свойство */
 }
 
 /* Псевдоэлемент для анимации заполнения */
@@ -327,7 +342,8 @@ footer a:hover {
 
 /* Анимация заполнения кнопки градиентом при наведении */
 .social-btn:hover::before {
-    transform: scaleY(1); /* Заполнение кнопки при наведении */
+    transform: scaleY(1);
+    /* Заполнение кнопки при наведении */
 }
 
 .race-btn {
@@ -341,75 +357,98 @@ footer a:hover {
     border-radius: 50px;
     cursor: pointer;
     outline: none;
-    overflow: hidden; /* Обеспечивает, чтобы псевдоэлемент не выходил за пределы кнопки */
-    transition: all 0.3s ease; /* Плавный переход для всех свойств */
+    overflow: hidden;
+    /* Обеспечивает, чтобы псевдоэлемент не выходил за пределы кнопки */
+    transition: all 0.3s ease;
+    /* Плавный переход для всех свойств */
 }
-  
-  /* Псевдоэлемент для анимации контурной линии */
+
+/* Псевдоэлемент для анимации контурной линии */
 .race-btn::before {
     content: '';
     position: absolute;
-    top: 0; /* Линия должна быть прямо по контуру */
+    top: 0;
+    /* Линия должна быть прямо по контуру */
     left: 0;
     right: 0;
     bottom: 0;
-    border: 4px solid #fff; /* Увеличиваем толщину линии */
-    border-radius: 50px; /* Делаем её круглой */
-    opacity: 0; /* Линия изначально скрыта */
-    transition: opacity 0.3s ease; /* Плавное появление линии */
+    border: 4px solid #fff;
+    /* Увеличиваем толщину линии */
+    border-radius: 50px;
+    /* Делаем её круглой */
+    opacity: 0;
+    /* Линия изначально скрыта */
+    transition: opacity 0.3s ease;
+    /* Плавное появление линии */
 }
-  
-  /* Анимация при наведении: линия появляется сразу */
+
+/* Анимация при наведении: линия появляется сразу */
 .race-btn:hover::before {
-    opacity: 1; /* Линия становится видимой */
+    opacity: 1;
+    /* Линия становится видимой */
 }
-  
-  /* Стиль кнопки при нажатии */
+
+/* Стиль кнопки при нажатии */
 .race-btn:active {
-    transform: scale(0.98); /* Уменьшаем кнопку при нажатии */
-    transition: transform 0.1s ease; /* Плавное изменение при нажатии */
+    transform: scale(0.98);
+    /* Уменьшаем кнопку при нажатии */
+    transition: transform 0.1s ease;
+    /* Плавное изменение при нажатии */
 }
-  
-  /* Цвета при нажатии: меняем местами цвет фона и текста */
+
+/* Цвета при нажатии: меняем местами цвет фона и текста */
 .race-btn:active {
-    color: #007bff; /* Текст кнопки становится цветом кнопки */
-    background-color: #fff; /* Фон кнопки становится белым */
-    border-color: #007bff; /* Цвет границы остаётся как у кнопки */
+    color: #007bff;
+    /* Текст кнопки становится цветом кнопки */
+    background-color: #fff;
+    /* Фон кнопки становится белым */
+    border-color: #007bff;
+    /* Цвет границы остаётся как у кнопки */
 }
-  
-  /* Индивидуальные стили для каждой кнопки */
+
+/* Индивидуальные стили для каждой кнопки */
 .race-btn.shop {
-    background-color: #28a745; 
+    background-color: #28a745;
     border-color: #28a745;
 }
 
 .race-btn.register {
-    background-color: #ffc107; /* Желтый для "Leaderboard" */
+    background-color: #ffc107;
+    /* Желтый для "Leaderboard" */
     border-color: #ffc107;
 }
 
 .race-btn.feedback {
-    background-color: #007bff; 
+    background-color: #007bff;
     border-color: #007bff;
 }
 
-  /* Когда кнопка активна, меняем цвета на основе классов */
+/* Когда кнопка активна, меняем цвета на основе классов */
 .race-btn.shop:active {
-    color: #28a745; /* Текст кнопки становится зелёным */
-    background-color: #fff; /* Фон становится белым */
-    border-color: #28a745; /* Граница остаётся зелёной */
+    color: #28a745;
+    /* Текст кнопки становится зелёным */
+    background-color: #fff;
+    /* Фон становится белым */
+    border-color: #28a745;
+    /* Граница остаётся зелёной */
 }
-  
+
 .race-btn.register:active {
-    color: #ffc107; /* Текст кнопки становится жёлтым */
-    background-color: #fff; /* Фон становится белым */
-    border-color: #ffc107; /* Граница остаётся жёлтой */
+    color: #ffc107;
+    /* Текст кнопки становится жёлтым */
+    background-color: #fff;
+    /* Фон становится белым */
+    border-color: #ffc107;
+    /* Граница остаётся жёлтой */
 }
 
 .race-btn.feedback:active {
-    color: #007bff; /* Текст кнопки становится жёлтым */
-    background-color: #fff; /* Фон становится белым */
-    border-color: #007bff; /* Граница остаётся жёлтой */
+    color: #007bff;
+    /* Текст кнопки становится жёлтым */
+    background-color: #fff;
+    /* Фон становится белым */
+    border-color: #007bff;
+    /* Граница остаётся жёлтой */
 }
 
 
@@ -424,62 +463,67 @@ footer a:hover {
         top: 10px;
         left: 20px;
     }
-    
+
     nav li {
         margin: 0 15px;
     }
-    
+
     nav a {
         font-size: 18px;
     }
-    
+
     .container {
         flex-direction: row;
     }
-    
+
     main {
         padding: 20px;
     }
-    
-    section, article {
+
+    section,
+    article {
         padding: 20px;
     }
-    
+
     .legend-card {
         width: calc(50% - 15px);
         height: 250px;
     }
-    
+
     .button-container {
         flex-direction: row;
         gap: 20px;
     }
-    
+
     .race-btn {
         width: auto;
         max-width: none;
     }
-    
+
     .race-image {
         float: right;
         margin: 10px 0 10px 20px;
     }
 
     .video-container {
-        height: 360px; /* Фиксированная высота для ПК */
+        height: 360px;
+        /* Фиксированная высота для ПК */
     }
 
     .video-container iframe {
-        height: 100%; /* Занимает всю высоту контейнера */
-        aspect-ratio: unset; /* Отключаем aspect-ratio для фиксированной высоты */
+        height: 100%;
+        /* Занимает всю высоту контейнера */
+        aspect-ratio: unset;
+        /* Отключаем aspect-ratio для фиксированной высоты */
     }
 
     .mobile-menu-toggle {
         display: none;
     }
-    
+
     nav ul {
-        display: flex !important; /* Всегда показываем на десктопе */
+        display: flex !important;
+        /* Всегда показываем на десктопе */
     }
 
 }
@@ -490,27 +534,27 @@ footer a:hover {
         width: calc(33% - 20px);
         height: 300px;
     }
-    
+
     .legend-card h3 {
         opacity: 0;
     }
-    
+
     .legend-card:hover h3 {
         opacity: 1;
     }
-    
+
     .video-container:hover iframe {
         filter: brightness(0.7);
     }
-    
+
     .video-description {
         opacity: 0;
     }
-    
+
     .video-container:hover .video-description {
         opacity: 1;
     }
-    
+
     .social-btn:hover {
         transform: scale(1.2);
     }
@@ -524,21 +568,21 @@ footer a:hover {
         top: 10px;
         right: 20px;
     }
-    
+
     header {
-        padding: 10px 50px 10px 10px; 
+        padding: 10px 50px 10px 10px;
         justify-content: flex-start;
     }
-    
+
     .logo {
         max-width: 60px;
     }
-    
+
     nav {
         padding: 0;
         position: static;
     }
-    
+
     /* Скрываем обычное меню на мобильных */
     nav ul {
         display: none;
@@ -554,28 +598,28 @@ footer a:hover {
         z-index: 999;
         overflow-y: auto;
     }
-    
+
     nav ul.active {
         display: flex;
     }
-    
+
     nav li {
         margin: 0;
         padding: 0;
         text-align: center;
         width: 100%;
     }
-    
+
     nav a {
         padding: 15px 20px;
         font-size: 18px;
         border-bottom: 1px solid #444;
     }
-    
+
     nav a:last-child {
         border-bottom: none;
     }
-    
+
     nav a:hover {
         background-color: #444;
         color: #e60000;
@@ -593,10 +637,18 @@ footer a:hover {
         cursor: pointer;
         z-index: 1000;
     }
-    
-    h1 { font-size: 1.6em; }
-    h2 { font-size: 1.3em; }
-    h3 { font-size: 1.1em; }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+
+    h3 {
+        font-size: 1.1em;
+    }
 }
 
 /* Очень маленькие экраны (480px и меньше) */
@@ -604,39 +656,40 @@ footer a:hover {
     body {
         font-size: 14px;
     }
-    
+
     header {
         padding: 8px 40px 8px 8px;
         min-height: 50px;
     }
-    
+
     .logo {
         max-width: 50px;
     }
-    
+
     .mobile-menu-toggle {
         padding: 8px;
         font-size: 20px;
     }
-    
+
     main {
         padding: 10px;
     }
-    
-    section, article {
+
+    section,
+    article {
         padding: 10px;
         margin-top: 10px;
     }
-    
+
     .social-buttons {
         gap: 0.5rem;
     }
-    
+
     .social-btn {
         width: 2.5rem;
         height: 2.5rem;
     }
-    
+
     .social-btn img {
         width: 1.2rem;
         height: 1.2rem;
