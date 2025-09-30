@@ -262,35 +262,6 @@ footer a:hover {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
-/* Кнопки */
-.button-container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    justify-content: center;
-    margin-top: 30px;
-    padding: 0 10px;
-}
-
-.race-btn {
-    position: relative;
-    padding: 12px 25px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #fff;
-    background-color: #007bff;
-    border: 2px solid #007bff;
-    border-radius: 50px;
-    cursor: pointer;
-    outline: none;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    text-align: center;
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
-}
-
 /* Социальные кнопки */
 .social-buttons {
     display: flex;
@@ -346,110 +317,7 @@ footer a:hover {
     /* Заполнение кнопки при наведении */
 }
 
-.race-btn {
-    position: relative;
-    padding: 15px 30px;
-    font-size: 18px;
-    font-weight: bold;
-    color: #fff;
-    background-color: #007bff;
-    border: 2px solid #007bff;
-    border-radius: 50px;
-    cursor: pointer;
-    outline: none;
-    overflow: hidden;
-    /* Обеспечивает, чтобы псевдоэлемент не выходил за пределы кнопки */
-    transition: all 0.3s ease;
-    /* Плавный переход для всех свойств */
-}
 
-/* Псевдоэлемент для анимации контурной линии */
-.race-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    /* Линия должна быть прямо по контуру */
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border: 4px solid #fff;
-    /* Увеличиваем толщину линии */
-    border-radius: 50px;
-    /* Делаем её круглой */
-    opacity: 0;
-    /* Линия изначально скрыта */
-    transition: opacity 0.3s ease;
-    /* Плавное появление линии */
-}
-
-/* Анимация при наведении: линия появляется сразу */
-.race-btn:hover::before {
-    opacity: 1;
-    /* Линия становится видимой */
-}
-
-/* Стиль кнопки при нажатии */
-.race-btn:active {
-    transform: scale(0.98);
-    /* Уменьшаем кнопку при нажатии */
-    transition: transform 0.1s ease;
-    /* Плавное изменение при нажатии */
-}
-
-/* Цвета при нажатии: меняем местами цвет фона и текста */
-.race-btn:active {
-    color: #007bff;
-    /* Текст кнопки становится цветом кнопки */
-    background-color: #fff;
-    /* Фон кнопки становится белым */
-    border-color: #007bff;
-    /* Цвет границы остаётся как у кнопки */
-}
-
-/* Индивидуальные стили для каждой кнопки */
-.race-btn.shop {
-    background-color: #28a745;
-    border-color: #28a745;
-}
-
-.race-btn.register {
-    background-color: #ffc107;
-    /* Желтый для "Leaderboard" */
-    border-color: #ffc107;
-}
-
-.race-btn.feedback {
-    background-color: #007bff;
-    border-color: #007bff;
-}
-
-/* Когда кнопка активна, меняем цвета на основе классов */
-.race-btn.shop:active {
-    color: #28a745;
-    /* Текст кнопки становится зелёным */
-    background-color: #fff;
-    /* Фон становится белым */
-    border-color: #28a745;
-    /* Граница остаётся зелёной */
-}
-
-.race-btn.register:active {
-    color: #ffc107;
-    /* Текст кнопки становится жёлтым */
-    background-color: #fff;
-    /* Фон становится белым */
-    border-color: #ffc107;
-    /* Граница остаётся жёлтой */
-}
-
-.race-btn.feedback:active {
-    color: #007bff;
-    /* Текст кнопки становится жёлтым */
-    background-color: #fff;
-    /* Фон становится белым */
-    border-color: #007bff;
-    /* Граница остаётся жёлтой */
-}
 
 
 
@@ -490,16 +358,6 @@ footer a:hover {
         height: 250px;
     }
 
-    .button-container {
-        flex-direction: row;
-        gap: 20px;
-    }
-
-    .race-btn {
-        width: auto;
-        max-width: none;
-    }
-
     .race-image {
         float: right;
         margin: 10px 0 10px 20px;
@@ -525,7 +383,6 @@ footer a:hover {
         display: flex !important;
         /* Всегда показываем на десктопе */
     }
-
 }
 
 /* Десктоп (1024px и выше) */
