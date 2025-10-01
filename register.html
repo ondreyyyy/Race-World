@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Регистрация</title>
     <link rel="icon" href="img/racing-flag.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/registerstyle.css">
+    <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
+
     <header>
         <img src="img/racing-flag.png" alt="Логотип Мир Автогонок" class="logo">
         <h1 id="main-header">Мир Автогонок</h1>
         <p><em>Добро пожаловать в захватывающий мир скорости и адреналина!</em></p>
+        <button class="mobile-menu-toggle">☰</button>
     </header>
 
     <nav>
@@ -39,7 +43,7 @@
                         <label>
                             <input type="password" name="password" placeholder="Пароль" required>
                         </label>
-                        <button type="submit"><strong>Зарегистрироваться</strong></button>
+                        <button type="submit" class="register-btn"><strong>Зарегистрироваться</strong></button>
                     </form>
                     <p class="login-link">Уже есть аккаунт? <a href="index.html"><strong>Войти</strong></a></p>
                 </div>
@@ -55,7 +59,31 @@
     </main>
 
     <footer>
-        <p>Разработано клубничной легендой: ONDREY</p>
+        <h2 id="contact">Контакты</h2>
+
+        <div class="social-buttons">
+            <a href="https://t.me/ondreytg" class="social-btn telegram">
+                <img src="img/telegram-white-icon.png">
+            </a>
+            <a href="https://discord.com/" class="social-btn discord">
+                <img src="img/discord-white-icon.png">
+            </a>
+            <a href="https://vk.com/ondreyvk" class="social-btn vk">
+                <img src="img/vk-white-icon.png">
+            </a>
+        </div>
+
+        <p>Телефон: <a href="tel:+7991234567">+7 999 123 4567</a></p>
+
+        <p>Email: <a href="mailto:info@raceworld.com">info@raceworld.com</a></p>
+
+        <p>Наш офис по адресу: просп. Вернадского, 78, стр. 4, Москва</p>
+
+        <address>
+            <p>Разработано клубничной легендой: ONDREY</p>
+        </address>
     </footer>
+    <script src="js/script.js"></script>
 </body>
+
 </html>

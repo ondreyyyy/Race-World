@@ -1,66 +1,111 @@
-document.addEventListener("DOMContentLoaded", function () {
-
-    //общие
-    const menuToggle = document.querySelector('.mobile-menu-toggle');
-    const navMenu = document.querySelector('nav ul');
+document.addEventListener("DOMContentLoaded", () => {
+    // ===================== Мобильное меню =====================
+    const menuToggle = document.querySelector(".mobile-menu-toggle");
+    const navMenu = document.querySelector("nav ul");
 
     if (menuToggle && navMenu) {
-        menuToggle.addEventListener('click', function () {
-            navMenu.classList.toggle('active');
-            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+        menuToggle.addEventListener("click", () => {
+            navMenu.classList.toggle("active");
+            document.body.style.overflow = navMenu.classList.contains("active") ? "hidden" : "";
         });
 
-        // Закрытие меню при клике на ссылку
-        const navLinks = document.querySelectorAll('nav a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', function () {
-                navMenu.classList.remove('active');
-                document.body.style.overflow = '';
+        navMenu.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => {
+                navMenu.classList.remove("active");
+                document.body.style.overflow = "";
             });
         });
 
-        // Закрытие меню при клике вне его области
-        document.addEventListener('click', function (event) {
-            if (!event.target.closest('nav') && !event.target.closest('.mobile-menu-toggle')) {
-                navMenu.classList.remove('active');
-                document.body.style.overflow = '';
+        document.addEventListener("click", e => {
+            if (!e.target.closest("nav") && !e.target.closest(".mobile-menu-toggle")) {
+                navMenu.classList.remove("active");
+                document.body.style.overflow = "";
             }
         });
 
-        // Закрытие меню при нажатии Escape
-        document.addEventListener('keydown', function (event) {
-            if (event.key === 'Escape') {
-                navMenu.classList.remove('active');
-                document.body.style.overflow = '';
+        document.addEventListener("keydown", e => {
+            if (e.key === "Escape") {
+                navMenu.classList.remove("active");
+                document.body.style.overflow = "";
             }
         });
     }
 
-    //для обратной связи
-    const form = document.querySelector("#contact-form form");
-    if (form) {
-        form.addEventListener("submit", function (event) {
+    // ===================== Форма обратной связи =====================
+    const contactFormWrapper = document.getElementById("contact-form");
+    if (contactFormWrapper) {
+        const contactForm = contactFormWrapper.querySelector("form");
+
+        contactForm.addEventListener("submit", e => {
             let valid = true;
-            const inputs = form.querySelectorAll("input[required], textarea[required], select[required]");
-            inputs.forEach(input => {
-                if (!input.checkValidity()) {
+            contactForm.querySelectorAll("input[required], textarea[required], select[required]")
+                .forEach(input => {
+                    if (!input.checkValidity()) {
+                        input.classList.add("error");
+                        valid = false;
+                    }
+                });
+            if (!valid) e.preventDefault();
+        });
+
+        contactForm.querySelectorAll("input, textarea, select").forEach(input => {
+            input.addEventListener("input", () => input.classList.remove("error"));
+        });
+
+        // Анимация появления
+        setTimeout(() => {
+            contactFormWrapper.style.opacity = "1";
+            contactFormWrapper.style.transform = "translateY(0)";
+        }, 150);
+    }
+
+    // ===================== Форма регистрации =====================
+    const registrationForm = document.querySelector(".registration-form");
+    if (registrationForm) {
+        registrationForm.addEventListener("submit", e => {
+            e.preventDefault();
+            let valid = true;
+
+            registrationForm.querySelectorAll("input[required]").forEach(input => {
+                if (!input.value.trim()) {
                     input.classList.add("error");
                     valid = false;
+                } else {
+                    input.classList.remove("error");
                 }
             });
 
-            if (!valid) {
-                event.preventDefault();
+            const emailInput = registrationForm.querySelector('input[type="email"]');
+            if (emailInput && emailInput.value.trim()) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(emailInput.value.trim())) {
+                    emailInput.classList.add("error");
+                    valid = false;
+                }
+            }
+
+            if (valid) {
+                setTimeout(() => window.location.href = "index.html", 100);
             }
         });
 
-        form.querySelectorAll("input, textarea, select").forEach(input => {
-            input.addEventListener("input", () => input.classList.remove("error"));
+        registrationForm.querySelectorAll("input").forEach(input => {
+            input.addEventListener("input", () => {
+                input.classList.remove("error");
+                if (input.type === "email" && input.value.trim()) {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(input.value.trim())) input.classList.add("error");
+                }
+            });
         });
-    }
 
-    setTimeout(() => {
-        document.getElementById("contact-form").style.opacity = "1";
-        document.getElementById("contact-form").style.transform = "translateY(0)";
-    }, 150);
+        // Анимация появления формы регистрации
+        const formContainer = document.querySelector(".form-container");
+        if (formContainer) {
+            setTimeout(() => {
+                formContainer.style.opacity = "1";
+                formContainer.style.transform = "translateY(0)";
+            }, 150);
+        }
+    }
 });
