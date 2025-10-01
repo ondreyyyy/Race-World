@@ -552,3 +552,226 @@ footer a:hover {
         height: 1.2rem;
     }
 }
+
+/* ----------------------------------------------------------ДЛЯ СТРАНИЦЫ ОБРАТНОЙ СВЯЗИ---------------------------------------------------------- */
+
+/* Стили для формы регистрации/контактов */
+#contact-form {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
+    padding: 0 15px;
+}
+
+#contact-form form {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#contact-form label {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #333;
+    font-size: 16px;
+}
+
+#contact-form input[type="text"],
+#contact-form input[type="tel"],
+#contact-form input[type="email"],
+#contact-form input[type="password"],
+#contact-form textarea,
+#contact-form select {
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px; /* Важно для iOS чтобы не зумилось */
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus,
+#contact-form select:focus {
+    border-color: #e60000;
+    outline: none;
+    box-shadow: 0 0 5px rgba(230, 0, 0, 0.3);
+}
+
+#contact-form ::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+#contact-form fieldset {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+#contact-form legend {
+    font-weight: bold;
+    color: #e60000;
+    padding: 0 10px;
+    font-size: 16px;
+}
+
+#contact-form button[type="submit"] {
+    margin-top: 25px;
+    padding: 15px;
+    background-color: #e60000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: transform 0.15s ease-in-out, background-color 0.3s ease;
+    width: 100%;
+}
+
+#contact-form button[type="submit"]:hover {
+    background-color: #cc0000;
+    transform: scale(1.03);
+}
+
+.error {
+    border: 2px solid red !important;
+    background-color: #ffe6e6;
+}
+
+/* Стили для радио-кнопок и чекбоксов */
+#contact-form input[type="radio"],
+#contact-form input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+#contact-form label:has(input[type="radio"]),
+#contact-form label:has(input[type="checkbox"]) {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    font-weight: normal;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Адаптивность для мобильных устройств */
+
+/* Планшеты (768px и меньше) */
+@media (max-width: 768px) {
+    #contact-form {
+        margin-top: 15px;
+        padding: 0 10px;
+    }
+    
+    #contact-form form {
+        padding: 15px;
+    }
+    
+    #contact-form label {
+        font-size: 15px;
+        margin-top: 12px;
+    }
+    
+    #contact-form input[type="text"],
+    #contact-form input[type="tel"],
+    #contact-form input[type="email"],
+    #contact-form input[type="password"],
+    #contact-form textarea,
+    #contact-form select {
+        padding: 10px;
+        font-size: 16px; /* Фиксирует zoom на iOS */
+    }
+    
+    #contact-form fieldset {
+        padding: 12px;
+        margin-top: 15px;
+    }
+    
+    #contact-form legend {
+        font-size: 15px;
+    }
+    
+    #contact-form button[type="submit"] {
+        padding: 12px;
+        font-size: 16px;
+        margin-top: 20px;
+    }
+}
+
+/* Мобильные устройства (480px и меньше) */
+@media (max-width: 480px) {
+    #contact-form {
+        margin-top: 10px;
+        padding: 0 8px;
+    }
+    
+    #contact-form form {
+        padding: 12px;
+        border-radius: 6px;
+    }
+    
+    #contact-form label {
+        font-size: 14px;
+        margin-top: 10px;
+    }
+    
+    #contact-form input[type="text"],
+    #contact-form input[type="tel"],
+    #contact-form input[type="email"],
+    #contact-form input[type="password"],
+    #contact-form textarea,
+    #contact-form select {
+        padding: 8px;
+        font-size: 16px;
+        border-radius: 3px;
+    }
+    
+    #contact-form fieldset {
+        padding: 10px;
+        margin-top: 12px;
+    }
+    
+    #contact-form legend {
+        font-size: 14px;
+    }
+    
+    #contact-form button[type="submit"] {
+        padding: 12px;
+        font-size: 16px;
+        margin-top: 18px;
+        border-radius: 3px;
+    }
+    
+    #contact-form input[type="radio"],
+    #contact-form input[type="checkbox"] {
+        transform: scale(1.1);
+        margin-right: 8px;
+    }
+}
+
+/* Большие экраны (1024px и больше) */
+@media (min-width: 1024px) {
+    #contact-form form {
+        max-width: 700px;
+        padding: 30px;
+    }
+    
+    #contact-form button[type="submit"] {
+        max-width: 300px;
+        align-self: center;
+    }
+}
