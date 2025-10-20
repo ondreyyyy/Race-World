@@ -1,4 +1,3 @@
-/* Базовые стили для всех устройств */
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #f0f0f0;
@@ -8,7 +7,6 @@ body {
     line-height: 1.5;
 }
 
-/* Мобильная навигация - гамбургер меню */
 .mobile-menu-toggle {
     display: none;
     background: none;
@@ -40,7 +38,6 @@ header {
     filter: brightness(0) invert(1);
 }
 
-/* Навигация для десктопа */
 nav {
     margin: 0;
     padding: 10px 0;
@@ -84,7 +81,6 @@ nav a:hover {
     color: #e60000;
 }
 
-/* Основной контент */
 .container {
     display: flex;
     flex-direction: column;
@@ -232,7 +228,6 @@ footer a:hover {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
-/* Видео контейнер */
 .video-container {
     position: relative;
     width: 100%;
@@ -242,12 +237,10 @@ footer a:hover {
     border-radius: 8px;
 }
 
-/* По умолчанию для мобильных - адаптивная высота */
 .video-container iframe {
     width: 100%;
     height: auto;
     aspect-ratio: 16/9;
-    /* Сохраняем пропорции */
     border: none;
     transition: filter 0.3s ease-in-out;
 }
@@ -295,12 +288,9 @@ footer a:hover {
     width: 1.5rem;
     height: 1.5rem;
     z-index: 1;
-    /* Добавляем это свойство */
     position: relative;
-    /* Добавляем это свойство */
 }
 
-/* Псевдоэлемент для анимации заполнения */
 .social-btn::before {
     content: '';
     position: absolute;
@@ -315,10 +305,8 @@ footer a:hover {
     z-index: 0;
 }
 
-/* Анимация заполнения кнопки градиентом при наведении */
 .social-btn:hover::before {
     transform: scaleY(1);
-    /* Заполнение кнопки при наведении */
 }
 
 /* Медиа-запросы для адаптивности */
@@ -365,14 +353,11 @@ footer a:hover {
 
     .video-container {
         height: 360px;
-        /* Фиксированная высота для ПК */
     }
 
     .video-container iframe {
         height: 100%;
-        /* Занимает всю высоту контейнера */
         aspect-ratio: unset;
-        /* Отключаем aspect-ratio для фиксированной высоты */
     }
 
     .mobile-menu-toggle {
@@ -381,7 +366,6 @@ footer a:hover {
 
     nav ul {
         display: flex !important;
-        /* Всегда показываем на десктопе */
     }
 }
 
@@ -440,7 +424,6 @@ footer a:hover {
         position: static;
     }
 
-    /* Скрываем обычное меню на мобильных */
     nav ul {
         display: none;
         flex-direction: column;
@@ -555,7 +538,6 @@ footer a:hover {
 
 /* ----------------------------------------------------------ДЛЯ СТРАНИЦЫ ОБРАТНОЙ СВЯЗИ---------------------------------------------------------- */
 
-/* Стили для формы регистрации/контактов */
 #contact-form {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -594,7 +576,6 @@ footer a:hover {
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
-    /* Важно для iOS чтобы не зумилось */
     font-family: 'Roboto', sans-serif;
     width: 100%;
     box-sizing: border-box;
@@ -659,7 +640,6 @@ footer a:hover {
     text-align: left;
 }
 
-/* Стили для радио-кнопок и чекбоксов */
 #contact-form input[type="radio"],
 #contact-form input[type="checkbox"] {
     margin-right: 10px;
@@ -702,7 +682,6 @@ footer a:hover {
     #contact-form select {
         padding: 10px;
         font-size: 16px;
-        /* Фиксирует zoom на iOS */
     }
 
     #contact-form fieldset {
@@ -1149,7 +1128,6 @@ footer a:hover {
         height: 30px;
     }
 
-    /* Уменьшаем анимацию для мобильных */
     .square:nth-child(1) {
         animation: moveSquare1 15s infinite ease-in-out;
         transform: translate(-15px, 15px);
@@ -1224,7 +1202,6 @@ footer a:hover {
     transform: scale(1.05);
 }
 
-/* Градиентный паралелограмм с наклонными боковыми сторонами */
 .card::before {
     content: "";
     position: absolute;
@@ -1247,7 +1224,6 @@ footer a:hover {
     left: 50%;
 }
 
-/* Полупрозрачный элемент с текстом */
 .content {
     position: absolute;
     top: 50%;
@@ -1345,7 +1321,6 @@ footer a:hover {
     }
 }
 
-/* Карточки с blur эффектом */
 .blur-effect-container {
     display: flex;
     justify-content: space-around;
@@ -1424,7 +1399,6 @@ footer a:hover {
     filter: blur(5px);
 }
 
-/* Карточки с lights эффектом */
 .lights-card-container {
     display: flex;
     justify-content: space-around;
@@ -1712,5 +1686,481 @@ footer a:hover {
         max-width: 1200px;
         margin-left: auto;
         margin-right: auto;
+    }
+}
+
+/* ----------------------------------------------------------ДЛЯ СТРАНИЦЫ СТАТИСТИКИ---------------------------------------------------------- */
+
+.stats-hero {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, rgba(255, 0, 150, 0.8) 0%, rgba(0, 204, 255, 0.8) 100%);
+    color: white;
+    margin-bottom: 30px;
+}
+
+.stats-hero h2 {
+    color: white !important;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.stats-hero p {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+.leaderboards-section {
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.tabs-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tab-button {
+    padding: 12px 24px;
+    background: #f0f0f0;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.tab-button.active {
+    background: linear-gradient(135deg, rgba(255, 0, 150, 0.8), rgba(0, 204, 255, 0.8));
+    color: white;
+}
+
+.tab-button:hover:not(.active) {
+    background: #ddd;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.stats-table-container {
+    overflow-x: auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.stats-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+    border-spacing: 0;
+}
+
+.stats-table thead tr {
+    background: linear-gradient(90deg, rgba(255, 0, 150, 0.85), rgba(0, 204, 255, 0.85));
+    position: relative;
+}
+
+.stats-table thead th {
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    padding: 16px 14px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 1.05em;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.5px;
+}
+
+.stats-table thead th::after {
+    content: "";
+    position: absolute;
+    top: 12%;
+    bottom: 12%;
+    right: 0;
+    width: 2px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 2px;
+}
+
+.stats-table thead th:last-child::after {
+    content: none;
+}
+
+.stats-table thead tr:hover {
+    background: linear-gradient(90deg, rgba(255, 0, 150, 0.85), rgba(0, 204, 255, 0.85));
+}
+
+.stats-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.stats-table tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.stats-table tbody tr:hover {
+    background: #f0f0f0;
+}
+
+.records-section {
+    padding: 40px 20px;
+    background: #f8f9fa;
+}
+
+.records-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.record-card {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border-top: 4px solid;
+    border-image: linear-gradient(135deg, rgba(255, 0, 150, 0.8), rgba(0, 204, 255, 0.8)) 1;
+}
+
+.record-card:hover {
+    transform: translateY(-5px);
+}
+
+.record-icon {
+    font-size: 3em;
+    margin-bottom: 15px;
+}
+
+.record-value {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #e60000;
+    margin: 10px 0;
+}
+
+.record-holder {
+    color: #666;
+    font-style: italic;
+}
+
+/* Инфографика */
+.infographic-section {
+    padding: 40px 20px;
+}
+
+.team-selector {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.team-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.team-button {
+    padding: 10px 20px;
+    background: #f0f0f0;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.team-button.active {
+    background: linear-gradient(135deg, rgba(255, 0, 150, 0.8), rgba(0, 204, 255, 0.8));
+    color: white;
+}
+
+.team-button:hover:not(.active) {
+    background: #ddd;
+}
+
+.infographic-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.chart-container {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.chart-bar {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    gap: 15px;
+}
+
+.bar-label {
+    min-width: 100px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.bar {
+    background: linear-gradient(90deg, rgba(255, 0, 150, 0.8), rgba(0, 204, 255, 0.8));
+    height: 30px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 8px;
+    color: white;
+    font-weight: bold;
+    min-width: 30px;
+    transition: width 1s ease;
+    box-sizing: border-box;
+}
+
+.stats-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.stat-card {
+    background: white;
+    padding: 25px 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-top: 4px solid;
+    border-image: linear-gradient(135deg, rgba(255, 0, 150, 0.8), rgba(0, 204, 255, 0.8)) 1;
+}
+
+.stat-number {
+    font-size: 2em;
+    font-weight: bold;
+    color: #e60000;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.comparison-section {
+    padding: 40px 20px;
+    background: #f8f9fa;
+}
+
+.comparison-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.drivers-comparison {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.driver-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-top: 4px solid;
+    border-image: linear-gradient(135deg, rgba(255, 0, 150, 0.8), rgba(0, 204, 255, 0.8)) 1;
+}
+
+.driver-header {
+    margin-bottom: 20px;
+}
+
+.driver-name {
+    color: #e60000;
+    margin-bottom: 5px;
+    font-size: 1.4em;
+}
+
+.driver-team {
+    color: #666;
+    font-style: italic;
+}
+
+.driver-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.driver-stat {
+    text-align: center;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.stat-value {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #e60000;
+    display: block;
+}
+
+.stat-name {
+    font-size: 0.8em;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Адаптивность для мобильных */
+
+/* Планшеты (768px и меньше) */
+@media (max-width: 768px) {
+    .stats-hero h2 {
+        font-size: 2em;
+    }
+
+    .infographic-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .stats-cards {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .drivers-comparison {
+        grid-template-columns: 1fr;
+    }
+
+    .driver-stats {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .team-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-button {
+        width: 200px;
+    }
+
+    .tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tab-button {
+        width: 200px;
+    }
+}
+
+/* Мобильные устройства (480px и меньше) */
+@media (max-width: 480px) {
+    .stats-hero {
+        padding: 30px 15px;
+    }
+
+    .stats-hero h2 {
+        font-size: 1.6em;
+    }
+
+    .records-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-card {
+        padding: 20px 15px;
+    }
+
+    .chart-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .bar {
+        width: 100% !important;
+        justify-content: center;
+        min-width: 60px;
+    }
+
+    .bar-label {
+        min-width: auto;
+    }
+
+    .stats-table {
+        font-size: 14px;
+    }
+
+    .stats-table th,
+    .stats-table td {
+        padding: 8px 10px;
+    }
+
+    .driver-card {
+        padding: 20px 15px;
+    }
+
+    .driver-stats {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+}
+
+/* Большие экраны (1024px и больше) */
+@media (min-width: 1024px) {
+
+    .leaderboards-section,
+    .records-section,
+    .infographic-section,
+    .comparison-section {
+        padding: 15px 40px;
     }
 }

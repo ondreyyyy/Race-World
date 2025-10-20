@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Статистика и рекорды - Мир Автогонок</title>
+    <link rel="icon" href="img/racing-flag.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <img src="img/racing-flag.png" alt="Логотип Мир Автогонок" class="logo">
+        <h1 id="main-header">Мир Автогонок</h1>
+        <p><em>Добро пожаловать в захватывающий мир скорости и адреналина!</em></p>
+        <button class="mobile-menu-toggle">☰</button>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="stats.html" class="active">Статистика</a></li>
+            <li><a href="shop.html">Магазин</a></li>
+            <li><a href="feedback.html">Обратная связь</a></li>
+            <li><a href="register.html">Войти</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="stats-hero">
+            <h2>Легенды автоспорта</h2>
+            <p>Цифры, которые вошли в историю</p>
+        </section>
+
+        <!-- Таблицы лидеров -->
+        <section class="leaderboards-section">
+            <h2>Текущие лидеры</h2>
+
+            <div class="tabs-container">
+                <div class="tabs">
+                    <button class="tab-button active" data-tab="f1">Формула 1</button>
+                    <button class="tab-button" data-tab="wrc">WRC</button>
+                    <button class="tab-button" data-tab="endurance">Гонки на выносливость</button>
+                </div>
+
+                <div class="tab-content active" id="f1">
+                    <div class="stats-table-container">
+                        <table class="stats-table">
+                            <thead>
+                                <tr>
+                                    <th>Позиция</th>
+                                    <th>Гонщик</th>
+                                    <th>Команда</th>
+                                    <th>Очки</th>
+                                    <th>Победы</th>
+                                    <th>Подиумы</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Макс Ферстаппен</td>
+                                    <td>Red Bull</td>
+                                    <td>575</td>
+                                    <td>19</td>
+                                    <td>21</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Серхио Перес</td>
+                                    <td>Red Bull</td>
+                                    <td>285</td>
+                                    <td>2</td>
+                                    <td>9</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Льюис Хэмилтон</td>
+                                    <td>Mercedes</td>
+                                    <td>234</td>
+                                    <td>0</td>
+                                    <td>6</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Фернандо Алонсо</td>
+                                    <td>Aston Martin</td>
+                                    <td>206</td>
+                                    <td>0</td>
+                                    <td>8</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Карлос Сайнс</td>
+                                    <td>Ferrari</td>
+                                    <td>200</td>
+                                    <td>1</td>
+                                    <td>3</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="wrc">
+                    <div class="stats-table-container">
+                        <table class="stats-table">
+                            <thead>
+                                <tr>
+                                    <th>Позиция</th>
+                                    <th>Гонщик</th>
+                                    <th>Команда</th>
+                                    <th>Очки</th>
+                                    <th>Победы</th>
+                                    <th>Спецучастки</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Калле Рованперя</td>
+                                    <td>Toyota Gazoo</td>
+                                    <td>287</td>
+                                    <td>7</td>
+                                    <td>89</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Элфин Эванс</td>
+                                    <td>Toyota Gazoo</td>
+                                    <td>245</td>
+                                    <td>5</td>
+                                    <td>76</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Тьерри Невилль</td>
+                                    <td>Hyundai</td>
+                                    <td>234</td>
+                                    <td>4</td>
+                                    <td>68</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Отт Тянак</td>
+                                    <td>M-Sport Ford</td>
+                                    <td>198</td>
+                                    <td>3</td>
+                                    <td>54</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Такамото Катсута</td>
+                                    <td>Toyota Gazoo</td>
+                                    <td>176</td>
+                                    <td>2</td>
+                                    <td>45</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="endurance">
+                    <div class="stats-table-container">
+                        <table class="stats-table">
+                            <thead>
+                                <tr>
+                                    <th>Позиция</th>
+                                    <th>Команда</th>
+                                    <th>Автомобиль</th>
+                                    <th>Очки</th>
+                                    <th>Победы</th>
+                                    <th>Подиумы</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Toyota Gazoo</td>
+                                    <td>Toyota GR010</td>
+                                    <td>198</td>
+                                    <td>5</td>
+                                    <td>7</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Ferrari AF Corse</td>
+                                    <td>Ferrari 499P</td>
+                                    <td>187</td>
+                                    <td>4</td>
+                                    <td>6</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Porsche Penske</td>
+                                    <td>Porsche 963</td>
+                                    <td>176</td>
+                                    <td>3</td>
+                                    <td>5</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Cadillac Racing</td>
+                                    <td>Cadillac V-Series.R</td>
+                                    <td>154</td>
+                                    <td>2</td>
+                                    <td>4</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Peugeot Total</td>
+                                    <td>Peugeot 9X8</td>
+                                    <td>132</td>
+                                    <td>1</td>
+                                    <td>3</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Исторические рекорды -->
+        <section class="records-section">
+            <h2>Исторические рекорды</h2>
+            <div class="records-grid">
+                <div class="record-card">
+                    <div class="record-icon">🏆</div>
+                    <h3>Больше всего чемпионств</h3>
+                    <p class="record-value">7 титулов</p>
+                    <p class="record-holder">Льюис Хэмилтон / Михаэль Шумахер</p>
+                </div>
+                <div class="record-card">
+                    <div class="record-icon">🚀</div>
+                    <h3>Самое большое количество побед</h3>
+                    <p class="record-value">103 победы</p>
+                    <p class="record-holder">Льюис Хэмилтон</p>
+                </div>
+                <div class="record-card">
+                    <div class="record-icon">⏱️</div>
+                    <h3>Самый молодой чемпион</h3>
+                    <p class="record-value">23 года 134 дня</p>
+                    <p class="record-holder">Макс Ферстаппен</p>
+                </div>
+                <div class="record-card">
+                    <div class="record-icon">🔝</div>
+                    <h3>Наибольшее количество поулов</h3>
+                    <p class="record-value">104 поула</p>
+                    <p class="record-holder">Льюис Хэмилтон</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Инфографика -->
+        <section class="infographic-section">
+            <h2>Статистика сезона</h2>
+
+            <div class="team-selector">
+                <h3>Выберите команду:</h3>
+                <div class="team-buttons">
+                    <button class="team-button active" data-team="redbull">Red Bull</button>
+                    <button class="team-button" data-team="mercedes">Mercedes</button>
+                    <button class="team-button" data-team="ferrari">Ferrari</button>
+                    <button class="team-button" data-team="mclaren">McLaren</button>
+                    <button class="team-button" data-team="aston">Aston Martin</button>
+                </div>
+            </div>
+
+            <div class="infographic-container">
+                <div class="chart-container">
+                    <h3>Распределение побед по командам</h3>
+                    <div class="chart-bar">
+                        <div class="bar-label">Red Bull</div>
+                        <div class="bar" style="width: 65%">65%</div>
+                    </div>
+                    <div class="chart-bar">
+                        <div class="bar-label">Mercedes</div>
+                        <div class="bar" style="width: 15%">15%</div>
+                    </div>
+                    <div class="chart-bar">
+                        <div class="bar-label">Ferrari</div>
+                        <div class="bar" style="width: 10%">10%</div>
+                    </div>
+                    <div class="chart-bar">
+                        <div class="bar-label">McLaren</div>
+                        <div class="bar" style="width: 5%">5%</div>
+                    </div>
+                    <div class="chart-bar">
+                        <div class="bar-label">Другие</div>
+                        <div class="bar" style="width: 5%">5%</div>
+                    </div>
+                </div>
+
+                <div class="stats-cards" id="team-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">575</div>
+                        <div class="stat-label">очков команды</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">21</div>
+                        <div class="stat-label">подиумов</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">860</div>
+                        <div class="stat-label">кругов лидирования</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">12</div>
+                        <div class="stat-label">поулов</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Сравнение гонщиков -->
+        <section class="comparison-section">
+            <h2>Сравнение топ-гонщиков 2024</h2>
+            <div class="comparison-grid">
+                <div class="drivers-comparison">
+                    <div class="driver-card">
+                        <div class="driver-header">
+                            <div class="driver-name">Макс Ферстаппен</div>
+                            <div class="driver-team">Red Bull Racing</div>
+                        </div>
+                        <div class="driver-stats">
+                            <div class="driver-stat">
+                                <span class="stat-value">575</span>
+                                <div class="stat-name">Очки</div>
+                            </div>
+                            <div class="driver-stat">
+                                <span class="stat-value">19</span>
+                                <div class="stat-name">Победы</div>
+                            </div>
+                            <div class="driver-stat">
+                                <span class="stat-value">21</span>
+                                <div class="stat-name">Подиумы</div>
+                            </div>
+                            <div class="driver-stat">
+                                <span class="stat-value">12</span>
+                                <div class="stat-name">Поулы</div>
+                            </div>
+                            <div class="driver-stat">
+                                <span class="stat-value">860</span>
+                                <div class="stat-name">Круги лидер</div>
+                            </div>
+                            <div class="driver-stat">
+                                <span class="stat-value">3</span>
+                                <div class="stat-name">Лучшие круги</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="driver-card">
+                        <div class="driver-header">
+                            <div class="driver-name">Льюис Хэмилтон</div>
+                            <div class="driver-team">Mercedes-AMG</div>
+                        </div>
+                        <div class="driver-stats">
+                            <div class="driver-stat">
+                                <span class="stat-value">234</span>
+                                <div class="stat-name">Очки</div>
+                            </div>
+                            <div class="driver-stat">
+                                <span class="stat-value">0</span>
+                                <div class="stat-name">Победы</div>
+                            </div>
+                            <div class="driver-stat">
+                                <span class="stat-value">6</span>
+                                <div class="stat-name">Подиумы</div>
+                            </div>
+                            <div class="driver-stat">
+                                <span class="stat-value">1</span>
+                                <div class="stat-name">Поулы</div>
+                            </div>
+                            <div class="driver-stat">
+                                <span class="stat-value">132</span>
+                                <div class="stat-name">Круги лидер</div>
+                            </div>
+                            <div class="driver-stat">
+                                <span class="stat-value">2</span>
+                                <div class="stat-name">Лучшие круги</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="driver-card">
+                        <div class="driver-header">
+                            <div class="driver-name">Фернандо Алонсо</div>
+                            <div class="driver-team">Aston Martin</div>
+                        </div>
+                        <div class="driver-stats">
+                            <div class="driver-stat">
+                                <span class="stat-value">206</span>
+                                <div class="stat-name">Очки</div>
+                            </div>
+                            <div class="driver-stat">
+                                <span class="stat-value">0</span>
+                                <div class="stat-name">Победы</div>
+                            </div>
+                            <div class="driver-stat">
+                                <span class="stat-value">8</span>
+                                <div class="stat-name">Подиумы</div>
+                            </div>
+                            <div class="driver-stat">
+                                <span class="stat-value">0</span>
+                                <div class="stat-name">Поулы</div>
+                            </div>
+                            <div class="driver-stat">
+                                <span class="stat-value">45</span>
+                                <div class="stat-name">Круги лидер</div>
+                            </div>
+                            <div class="driver-stat">
+                                <span class="stat-value">1</span>
+                                <div class="stat-name">Лучшие круги</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="driver-card">
+                        <div class="driver-header">
+                            <div class="driver-name">Ландо Норрис</div>
+                            <div class="driver-team">McLaren</div>
+                        </div>
+                        <div class="driver-stats">
+                            <div class="driver-stat">
+                                <span class="stat-value">205</span>
+                                <div class="stat-name">Очки</div>
+                            </div>
+                            <div class="driver-stat">
+                                <span class="stat-value">1</span>
+                                <div class="stat-name">Победы</div>
+                            </div>
+                            <div class="driver-stat">
+                                <span class="stat-value">7</span>
+                                <div class="stat-name">Подиумы</div>
+                            </div>
+                            <div class="driver-stat">
+                                <span class="stat-value">2</span>
+                                <div class="stat-name">Поулы</div>
+                            </div>
+                            <div class="driver-stat">
+                                <span class="stat-value">89</span>
+                                <div class="stat-name">Круги лидер</div>
+                            </div>
+                            <div class="driver-stat">
+                                <span class="stat-value">6</span>
+                                <div class="stat-name">Лучшие круги</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="driver-card">
+                        <div class="driver-header">
+                            <div class="driver-name">Себастьян Ожье</div>
+                            <div class="driver-team">Toyota Gazoo Racing</div>
+                        </div>
+                        <div class="driver-stats">
+                            <div class="driver-stat">
+                                <span class="stat-value">192</span>
+                                <div class="stat-name">Очки</div>
+                            </div>
+                            <div class="driver-stat">
+                                <span class="stat-value">5</span>
+                                <div class="stat-name">Победы</div>
+                            </div>
+                            <div class="driver-stat">
+                                <span class="stat-value">9</span>
+                                <div class="stat-name">Подиумы</div>
+                            </div>
+                            <div class="driver-stat">
+                                <span class="stat-value">6</span>
+                                <div class="stat-name">Поулы</div>
+                            </div>
+                            <div class="driver-stat">
+                                <span class="stat-value">320</span>
+                                <div class="stat-name">Круги лидер</div>
+                            </div>
+                            <div class="driver-stat">
+                                <span class="stat-value">4</span>
+                                <div class="stat-name">Лучшие круги</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="driver-card">
+                        <div class="driver-header">
+                            <div class="driver-name">Себастьен Буэми</div>
+                            <div class="driver-team">Toyota Gazoo Racing</div>
+                        </div>
+                        <div class="driver-stats">
+                            <div class="driver-stat">
+                                <span class="stat-value">168</span>
+                                <div class="stat-name">Очки</div>
+                            </div>
+                            <div class="driver-stat">
+                                <span class="stat-value">3</span>
+                                <div class="stat-name">Победы</div>
+                            </div>
+                            <div class="driver-stat">
+                                <span class="stat-value">6</span>
+                                <div class="stat-name">Подиумы</div>
+                            </div>
+                            <div class="driver-stat">
+                                <span class="stat-value">4</span>
+                                <div class="stat-name">Поулы</div>
+                            </div>
+                            <div class="driver-stat">
+                                <span class="stat-value">150</span>
+                                <div class="stat-name">Круги лидер</div>
+                            </div>
+                            <div class="driver-stat">
+                                <span class="stat-value">3</span>
+                                <div class="stat-name">Лучшие круги</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <h2 id="contact">Контакты</h2>
+        <div class="social-buttons">
+            <a href="https://t.me/ondreytg" class="social-btn telegram">
+                <img src="img/telegram-white-icon.png">
+            </a>
+            <a href="https://discord.com/" class="social-btn discord">
+                <img src="img/discord-white-icon.png">
+            </a>
+            <a href="https://vk.com/ondreyvk" class="social-btn vk">
+                <img src="img/vk-white-icon.png">
+            </a>
+        </div>
+        <p>Телефон: <a href="tel:+79991234567">+7 999 123 4567</a></p>
+        <p>Email: <a href="mailto:info@raceworld.com">info@raceworld.com</a></p>
+        <p>Наш офис по адресу: просп. Вернадского, 78, стр. 4, Москва</p>
+        <address>
+            <p>Разработано клубничной легендой: ONDREY</p>
+        </address>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

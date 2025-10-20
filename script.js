@@ -99,7 +99,6 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
 
-        // Анимация появления формы регистрации
         const formContainer = document.querySelector(".form-container");
         if (formContainer) {
             setTimeout(() => {
@@ -107,5 +106,79 @@ document.addEventListener("DOMContentLoaded", () => {
                 formContainer.style.transform = "translateY(0)";
             }, 150);
         }
+    }
+
+    // ===================== СТРАНИЦА СТАТИСТИКИ =====================
+    const statsPage = document.querySelector('.stats-hero');
+    if (statsPage) {
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const tabId = this.getAttribute('data-tab');
+
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+
+                this.classList.add('active');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        const teamButtons = document.querySelectorAll('.team-button');
+        const teamStats = {
+            redbull: { points: 575, podiums: 21, laps: 860, poles: 12 },
+            mercedes: { points: 409, podiums: 8, laps: 132, poles: 1 },
+            ferrari: { points: 406, podiums: 9, laps: 98, poles: 7 },
+            mclaren: { points: 302, podiums: 9, laps: 89, poles: 2 },
+            aston: { points: 280, podiums: 8, laps: 45, poles: 0 }
+        };
+
+        teamButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const team = this.getAttribute('data-team');
+
+                // Убираем активный класс у всех кнопок
+                teamButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+
+                // Обновляем статистику
+                const stats = teamStats[team];
+                const statCards = document.querySelectorAll('.stat-card .stat-number');
+                if (statCards.length >= 4) {
+                    statCards[0].textContent = stats.points;
+                    statCards[1].textContent = stats.podiums;
+                    statCards[2].textContent = stats.laps;
+                    statCards[3].textContent = stats.poles;
+                }
+            });
+        });
+
+        const animateOnScroll = function () {
+            const elements = document.querySelectorAll('.record-card, .stat-card, .driver-card');
+
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.style.opacity = "1";
+                    element.style.transform = "translateY(0)";
+                }
+            });
+        };
+
+        const animatedElements = document.querySelectorAll('.record-card, .stat-card, .driver-card');
+        animatedElements.forEach(element => {
+            element.style.opacity = "0";
+            element.style.transform = "translateY(30px)";
+            element.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+        });
+
+        window.addEventListener('load', animateOnScroll);
+        window.addEventListener('scroll', animateOnScroll);
+
+        setTimeout(animateOnScroll, 100);
     }
 });
